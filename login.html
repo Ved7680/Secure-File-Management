@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login and Signup Form</title>
+
+    <!-- CSS -->
+    <link rel=" stylesheet" href="CSS/style.css">
+
+    <!-- SMTPJS -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <section class="container forms" id="Login">
+        <div class="form login">
+            <div class="form-content">
+                <header>Login</header>
+
+                <form action="#" method="get">
+                    <div class="field input-field">
+                        <input type="text" placeholder="username" class="input" name="uName2">
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password" name="password2">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Forgot password?</a>
+                    </div>
+
+                    <div class="field button-field">
+                        <button id="myBtn">Login</button>
+                    </div>
+
+                </form>
+
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="link signup-link">Signup</a></span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="image/google.png" alt="" class="google-icon">
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+
+        <div class="form signup">
+            <div class="form-content">
+                <header>Signup</header>
+
+                <form action="#" method="post">
+                    <div class="field input-field">
+                        <input type="text" placeholder="username" class="input" name="uName">
+                    </div>
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password" name="password" id="passw">
+                        
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Confirm Password" class="password" onclick="passwordChecker()" id="cPassw">
+                        <i class='bx bx-hide eye-icon'></i>
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email Address" id="email" value="" name="email" onclick="confirmPass()">
+                    </div>
+
+                    <div class="field input-field">
+                        <input type="text" placeholder="Enter OTP" id="otp" onclick="generateOtp()" value="">
+                        <!-- <i class='bx bx-hide eye-icon'></i> -->
+                    </div>
+
+                    <div class="form-link">
+                        <span>Don't get OTP <a href="#" class="resend-link" onclick="generateOtp()">resend</a></span>
+                    </div>
+
+                    <div class="field button-field">
+                        <button onclick="otpChecker()" id="reg">Signup</button>
+                    </div>
+
+                </form>
+
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="signup-link">Login</a></span>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="image/google.png" alt="" class="google-icon">
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="container1" id="home">
+        <div class="header"><span>Cryptos</span></div>
+
+        <!-- level1  -->
+        <div class="middle" id="level1">
+
+            <!-- encode  -->
+            <div class="content" id="encode1">
+                <div class="box">
+                    <div class="top"><span class="text">Plaintext</span></div>
+                    <div class="bottom">
+                        <textarea placeholder="Enter the message..." id="plaintext1"></textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top">
+                        <div class="ciphering"><span>Encode</span></div>
+                        <div class="ciphering"><span><a href="#" onclick="Decode1()">Decode</a></span></div>
+                    </div>
+                    <div class="mid">
+                        <div class="algoName"><span>Caesar Cipher</span></div>
+                        <div class="algo1">
+                            <div class="caesar"><i class='bx bx-minus minus' onclick="sub1()"></i></div>
+                            <div class="caesar"><div class="shift" id="x1"></div></div>
+                            <div class="caesar">
+                                <div class="atob">
+                                    <div>a</div>
+                                    <div><i class='bx bx-chevrons-right'></i></div>
+                                    <div id="alpha1"></div>
+                                </div>
+                            </div>
+                            <div class="caesar"><i class='bx bx-plus plus' onclick="add1()"></i></div>
+                        </div>
+                        <div class="click"><a href="" onclick="level1Encode()">Click Here</a></div>
+                    </div>
+                    <div class="level">
+                        <div class="levels"><span>Level 1</span></div>
+                        <div class="levels"><span><a href="#" onclick="Level2()">Level 2</a></span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top"><span class="text">Ciphertext</span></div>
+                    <div class="bottom">
+                        <textarea id="ciphertext1"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- decode  -->
+            <div class="content" id="decode1">
+                <div class="box">
+                    <div class="top"><span class="text">Ciphertext</span></div>
+                    <div class="bottom">
+                        <textarea placeholder="Enter the message..." id="ciphertext2"></textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top">
+                        <div class="ciphering"><span><a href="#" onclick="Encode1()">Encode</a></span></div>
+                        <div class="ciphering"><span>Decode</span></div>
+                    </div>
+                    <div class="mid">
+                        <div class="algoName"><span>Caesar Cipher</span></div>
+                        <div class="algo1">
+                            <div class="caesar"><i class='bx bx-minus minus' onclick="sub2()"></i></div>
+                            <div class="caesar"><div class="shift" id="x2"></div></div>
+                            <div class="caesar">
+                                <div class="atob">
+                                    <div>a</div>
+                                    <div><i class='bx bx-chevrons-right'></i></div>
+                                    <div id="alpha2"></div>
+                                </div>
+                            </div>
+                            <div class="caesar"><i class='bx bx-plus plus' onclick="add2()"></i></div>
+                        </div>
+                        <div class="click"><a href="" onclick="level1Decode()">Click Here</a></div>
+                    </div>
+                    <div class="level">
+                        <div class="levels"><span>Level 1</span></div>
+                        <div class="levels"><span><a href="#" onclick="Level2()">Level 2</a></span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top"><span class="text">Plaintext</span></div>
+                    <div class="bottom">
+                        <textarea id="plaintext2"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- level2  -->
+        <div class="middle" id="level2">
+
+            <!-- encode  -->
+            <div class="content" id="encode2">
+                <div class="box">
+                    <div class="top"><span class="text">Plaintext</span></div>
+                    <div class="bottom">
+                        <textarea placeholder="Enter the message..." id="plaintext3"></textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top">
+                        <div class="ciphering"><span>Encode</span></div>
+                        <div class="ciphering"><span><a href="#" onclick="Decode2()">Decode</a></span></div>
+                    </div>
+                    <div class="mid">
+                        <div class="algoName"><span>Caesar Cipher</span></div>
+                        <div class="algo1">
+                            <div class="caesar"><i class='bx bx-minus minus' onclick="sub3()"></i></div>
+                            <div class="caesar"><div class="shift" id="x3"></div></div>
+                            <div class="caesar">
+                                <div class="atob">
+                                    <div>a</div>
+                                    <div><i class='bx bx-chevrons-right'></i></div>
+                                    <div id="alpha3"></div>
+                                </div>
+                            </div>
+                            <div class="caesar"><i class='bx bx-plus plus' onclick="add3()"></i></div>
+                        </div>
+                        <div class="algoName"><span>Rail Fence Cipher</span></div>
+                        <div class="algo2">
+                            <div class="caesar"><i class='bx bx-minus minus' onclick="subkey1()"></i></div>
+                            <div class="caesar"><div class="key">key:</div></div>
+                            <div class="caesar"><div class="shift" id="key1"></div></div>
+                            <div class="caesar"><i class='bx bx-plus plus' onclick="addkey1()"></i></div>
+                        </div>
+                        <div class="click"><a href="" onclick="level2Encode()">Click Here</a></div>
+                    </div>
+                    <div class="level">
+                        <div class="levels"><span><a href="#" onclick="Level1()">Level 1</a></span></div>
+                        <div class="levels"><span>Level 2</span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top"><span class="text">Ciphertext</span></div>
+                    <div class="bottom">
+                        <textarea id="ciphertext3"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- decode  -->
+            <div class="content" id="decode2">
+                <div class="box">
+                    <div class="top"><span class="text">Ciphertext</span></div>
+                    <div class="bottom">
+                        <textarea placeholder="Enter the message..." id="ciphertext4"></textarea>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top">
+                        <div class="ciphering"><span><a href="#" onclick="Encode2()">Encode</a></span></div>
+                        <div class="ciphering"><span>Decode</span></div>
+                    </div>
+                    <div class="mid">
+                        <div class="algoName"><span>Caesar Cipher</span></div>
+                        <div class="algo1">
+                            <div class="caesar"><i class='bx bx-minus minus' onclick="sub4()"></i></div>
+                            <div class="caesar"><div class="shift" id="x4"></div></div>
+                            <div class="caesar">
+                                <div class="atob">
+                                    <div>a</div>
+                                    <div><i class='bx bx-chevrons-right'></i></div>
+                                    <div id="alpha4"></div>
+                                </div>
+                            </div>
+                            <div class="caesar"><i class='bx bx-plus plus' onclick="add4()"></i></div>
+                        </div>
+                        <div class="algoName"><span>Rail Fence Cipher</span></div>
+                        <div class="algo2">
+                            <div class="caesar"><i class='bx bx-minus minus' onclick="subkey2()"></i></div>
+                            <div class="caesar"><div class="key">key:</div></div>
+                            <div class="caesar"><div class="shift" id="key2"></div></div>
+                            <div class="caesar"><i class='bx bx-plus plus' onclick="addkey2()"></i></div>
+                        </div>
+                        <div class="click"><a href="" onclick="level2Decode()">Click Here</a></div>
+                    </div>
+                    <div class="level">
+                        <div class="levels"><span><a href="#" onclick="Level1()">Level 1</a></span></div>
+                        <div class="levels"><span>Level 2</span></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="top"><span class="text">Plaintext</span></div>
+                    <div class="bottom">
+                        <textarea id="plaintext4"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="header1">
+                <span>Caesar cipher: Encode and decode online:</span>
+            </div>
+            <div class="para"><p>Method in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. The method is named after Julius Caesar, who used it in his private correspondence.</p></div>
+            <div class="line2"></div>
+            <div class="course">
+                <span>Cyber Security</span>
+                <span>Group - 3</span>
+                <span>ISP 2022</span>
+            </div>
+            <div class="member">
+                <span>Arpit Patel</span>
+                <span>Ved Nayi</span>
+                <span>Shamya Shah</span>
+                <span>Prajjval Pathak</span>
+            </div>
+        </div>
+    </section>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <!-- b97a3076-e2c6-47ab-add6-9791a53d1a09 -->
+</body>
+</html>
